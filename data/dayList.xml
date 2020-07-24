@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<list>
+    <staff-day>
+        <staff-id>4</staff-id>
+    </staff-day>
+    <staff-day>
+        <staff-id>3</staff-id>
+        <list-day>
+            <day>2020-07-09</day>
+            <order-name>Horizont (2).</order-name>
+            <productivity>45</productivity>
+            <staff-id-day>3</staff-id-day>
+        </list-day>
+    </staff-day>
+    <staff-day>
+        <staff-id>2</staff-id>
+        <list-day>
+            <day>2020-07-15</day>
+            <order-name>Horizont (2).</order-name>
+            <productivity>45</productivity>
+            <staff-id-day>2</staff-id-day>
+        </list-day>
+        <list-day>
+            <day>2020-07-18</day>
+            <order-name>Horizont (2).</order-name>
+            <productivity>45</productivity>
+            <staff-id-day>2</staff-id-day>
+        </list-day>
+        <list-day>
+            <day>2020-07-17</day>
+            <order-name>Horizont (2).</order-name>
+            <productivity>34</productivity>
+            <staff-id-day>2</staff-id-day>
+        </list-day>
+        <list-day>
+            <day>2020-07-09</day>
+            <order-name>Jon</order-name>
+            <productivity>56</productivity>
+            <staff-id-day>2</staff-id-day>
+        </list-day>
+    </staff-day>
+</list>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<list>
+    <user>
+        <user-id>1</user-id>
+        <user-name>user</user-name>
+        <user-password>Jze5Dlhcc/nHhD+V+ERqfw==</user-password>
+        <salt>mK09efM3/W5RgHqah4NEjw==</salt>
+    </user>
+    <user>
+        <user-id>2</user-id>
+        <user-name>user2</user-name>
+        <user-password>6Zgfkh0sP8Wx0DYVQ9FFtQ==</user-password>
+        <salt>9Zbuu4iBVy+UVDaozlTljQ==</salt>
+    </user>
+    <user>
+        <user-id>3</user-id>
+        <user-name>ihar</user-name>
+        <user-password>RXcxtVkeT9Opj9wlkjaqDQ==</user-password>
+        <salt>hJPGy36CS8e4LP8U1GRaCQ==</salt>
+    </user>
+</list>

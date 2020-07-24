@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<list>
+    <staff-list>
+        <staff>
+            <id>2</id>
+            <first-name>Mihail</first-name>
+            <last-name>Fedorov</last-name>
+            <date-of-birth>2020-07-02</date-of-birth>
+            <salary>6543</salary>
+            <position>accountant</position>
+            <address>Minsk</address>
+            <department>technical</department>
+            <path-photo>file:/C:/Users/Игорь/Pictures/image/Untitled.png</path-photo>
+        </staff>
+        <staff>
+            <id>4</id>
+            <first-name>Jonovich</first-name>
+            <last-name>Jon</last-name>
+            <date-of-birth>2020-07-23</date-of-birth>
+            <salary>3456</salary>
+            <position>worker</position>
+            <address>Minsk City Centr</address>
+            <department>technical</department>
+            <path-photo>file:/C:/Users/Игорь/Pictures/image/Untitled.png</path-photo>
+        </staff>
+        <staff>
+            <id>3</id>
+            <first-name>Viktor</first-name>
+            <last-name>Polienkoko</last-name>
+            <date-of-birth>2020-07-04</date-of-birth>
+            <salary>12345678</salary>
+            <position>director</position>
+            <address>USA23456</address>
+            <department>marketing</department>
+            <path-photo>file:/C:/Users/Игорь/Pictures/image/Untitled.png</path-photo>
+        </staff>
+    </staff-list>
+</list>
