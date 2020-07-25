@@ -1,7 +1,7 @@
 package com.markevich.factorybox.net.serverCommandFactory.staffday;
 
-import biznesObgectFactory.Day;
-import biznesObgectFactory.StaffDays;
+import businessObjectFactoryBox.Day;
+import businessObjectFactoryBox.StaffDays;
 import com.markevich.factorybox.net.ResponseCode;
 import com.markevich.factorybox.net.interfaces.Command;
 import com.markevich.factorybox.net.interfaces.Request;
@@ -21,8 +21,7 @@ public class GetUpdateStaffDayCommand implements Command {
         String[] daysArray = days.split("#");
         StaffDays staffDay = new StaffDays();
         staffDay.setStaffId(new BigInteger(staffId));
-        for (int i = 0; i < daysArray.length; i++) {
-            String dayStr = daysArray[i];
+        for (String dayStr : daysArray) {
             String[] dayArray = dayStr.split("/");
             Day day = new Day();
             day.setDay(LocalDate.parse(dayArray[0]));

@@ -1,6 +1,6 @@
 package com.markevich.factorybox.service.user;
 
-import biznesObgectFactory.User;
+import businessObjectFactoryBox.User;
 import com.markevich.factorybox.dao.xmldb.XmlDaoFactory;
 
 public class SaveUser {

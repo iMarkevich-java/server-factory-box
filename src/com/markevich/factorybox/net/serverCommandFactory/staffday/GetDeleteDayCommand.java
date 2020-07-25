@@ -1,6 +1,6 @@
 package com.markevich.factorybox.net.serverCommandFactory.staffday;
 
-import biznesObgectFactory.Day;
+import businessObjectFactoryBox.Day;
 import com.markevich.factorybox.net.ResponseCode;
 import com.markevich.factorybox.net.interfaces.Command;
 import com.markevich.factorybox.net.interfaces.Request;

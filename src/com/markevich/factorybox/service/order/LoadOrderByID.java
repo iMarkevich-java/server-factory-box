@@ -1,6 +1,6 @@
 package com.markevich.factorybox.service.order;
 
-import biznesObgectFactory.Order;
+import businessObjectFactoryBox.Order;
 import com.markevich.factorybox.dao.xmldb.XmlDaoFactory;
 
 public class LoadOrderByID {

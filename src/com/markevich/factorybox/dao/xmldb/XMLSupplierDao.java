@@ -1,6 +1,6 @@
 package com.markevich.factorybox.dao.xmldb;
 
-import biznesObgectFactory.Supplier;
+import businessObjectFactoryBox.Supplier;
 import com.markevich.factorybox.dao.daointerface.Dao;
 import com.markevich.factorybox.dao.xmldb.exception.ExceptionFindSupplierId;
 import com.markevich.factorybox.dao.xmldb.exception.ExceptionReadXMLFile;
@@ -97,11 +97,7 @@ public class XMLSupplierDao implements Dao<Supplier> {
             StreamResult file = new StreamResult(new File("data/supplierList.xml"));
             transformer.transform(source, file);
 
-        } catch (ParserConfigurationException e) {
-            throw new ExceptionWriteXMLFile(getClass().getName());
-        } catch (TransformerConfigurationException e) {
-            throw new ExceptionWriteXMLFile(getClass().getName());
-        } catch (TransformerException e) {
+        } catch (ParserConfigurationException | TransformerException e) {
             throw new ExceptionWriteXMLFile(getClass().getName());
         }
     }

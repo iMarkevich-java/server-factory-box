@@ -1,7 +1,7 @@
 package com.markevich.factorybox.dao.xmldb;
 
-import biznesObgectFactory.Position;
-import biznesObgectFactory.Staff;
+import businessObjectFactoryBox.Position;
+import businessObjectFactoryBox.Staff;
 import com.markevich.factorybox.dao.daointerface.Dao;
 import com.markevich.factorybox.dao.xmldb.exception.ExceptionFindStaffId;
 import com.markevich.factorybox.dao.xmldb.exception.ExceptionReadXMLFile;
@@ -183,11 +183,7 @@ public class XMLStaffDao implements Dao<Staff> {
             StreamResult file = new StreamResult(new File("data/staffList.xml"));
             transformer.transform(source, file);
 
-        } catch (ParserConfigurationException e) {
-            throw new ExceptionWriteXMLFile(getClass().getName());
-        } catch (TransformerConfigurationException e) {
-            throw new ExceptionWriteXMLFile(getClass().getName());
-        } catch (TransformerException e) {
+        } catch (ParserConfigurationException | TransformerException e) {
             throw new ExceptionWriteXMLFile(getClass().getName());
         }
     }

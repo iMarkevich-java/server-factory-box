@@ -1,7 +1,7 @@
 package com.markevich.factorybox.net.serverCommandFactory.staffday;
 
-import biznesObgectFactory.Day;
-import biznesObgectFactory.StaffDays;
+import businessObjectFactoryBox.Day;
+import businessObjectFactoryBox.StaffDays;
 import com.markevich.factorybox.net.ResponseCode;
 import com.markevich.factorybox.net.interfaces.Command;
 import com.markevich.factorybox.net.interfaces.Request;
@@ -21,8 +21,7 @@ public class GetSaveStaffDayCommand implements Command {
         Day day = new Day();
         staffDay.setStaffId(new BigInteger(staffId));
         String[] str = days.split("#");
-        for (int i = 0; i < str.length; i++) {
-            String dayStr = str[i];
+        for (String dayStr : str) {
             String[] dayArray = dayStr.split("/");
             day.setDay(LocalDate.parse(dayArray[0]));
             day.setOrderName(dayArray[1]);

@@ -1,6 +1,6 @@
 package com.markevich.factorybox.dao.xmldb;
 
-import biznesObgectFactory.User;
+import businessObjectFactoryBox.User;
 import com.markevich.factorybox.dao.xmldb.exception.ExceptionReadXMLFile;
 import com.markevich.factorybox.dao.xmldb.exception.ExceptionWriteXMLFile;
 import com.markevich.factorybox.service.exceptions.ExceptionGeneratePassword;
@@ -103,11 +103,7 @@ public class XMLUserDao {
             StreamResult file = new StreamResult(new File("data/userList.xml"));
             transformer.transform(source, file);
 
-        } catch (ParserConfigurationException e) {
-            throw new ExceptionWriteXMLFile(getClass().getName());
-        } catch (TransformerConfigurationException e) {
-            throw new ExceptionWriteXMLFile(getClass().getName());
-        } catch (TransformerException e) {
+        } catch (ParserConfigurationException | TransformerException e) {
             throw new ExceptionWriteXMLFile(getClass().getName());
         }
     }
@@ -129,7 +125,7 @@ public class XMLUserDao {
     public void save(User user) {
         for (UserDb userTemp : listUser) {
             if (userTemp.getName().equals(user.getName())) {
-                continue;
+                return;
             }
         }
         SecureRandom random = new SecureRandom();
@@ -160,7 +156,7 @@ public class XMLUserDao {
     }
 
     public Boolean verification(User user) {
-        UserDb userDb = new UserDb();
+        UserDb userDb;
         for (UserDb userTemp : listUser) {
             if (userTemp.getName().equals(user.getName())) {
                 userDb = userTemp;

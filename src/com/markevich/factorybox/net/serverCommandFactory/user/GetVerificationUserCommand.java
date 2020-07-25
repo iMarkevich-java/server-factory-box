@@ -1,6 +1,6 @@
 package com.markevich.factorybox.net.serverCommandFactory.user;
 
-import biznesObgectFactory.User;
+import businessObjectFactoryBox.User;
 import com.markevich.factorybox.net.ResponseCode;
 import com.markevich.factorybox.net.interfaces.Command;
 import com.markevich.factorybox.net.interfaces.Request;

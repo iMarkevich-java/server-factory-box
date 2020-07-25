@@ -1,7 +1,7 @@
 package com.markevich.factorybox.dao.xmldb;
 
-import biznesObgectFactory.Day;
-import biznesObgectFactory.StaffDays;
+import businessObjectFactoryBox.Day;
+import businessObjectFactoryBox.StaffDays;
 import com.markevich.factorybox.dao.daointerface.Dao;
 import com.markevich.factorybox.dao.xmldb.exception.ExceptionReadXMLFile;
 import com.markevich.factorybox.dao.xmldb.exception.ExceptionWriteXMLFile;
@@ -116,11 +116,7 @@ public class XMLStaffDayDao implements Dao<StaffDays> {
             StreamResult file = new StreamResult(new File("data/dayList.xml"));
             transformer.transform(source, file);
 
-        } catch (ParserConfigurationException e) {
-            throw new ExceptionWriteXMLFile(getClass().getName());
-        } catch (TransformerConfigurationException e) {
-            throw new ExceptionWriteXMLFile(getClass().getName());
-        } catch (TransformerException e) {
+        } catch (ParserConfigurationException | TransformerException e) {
             throw new ExceptionWriteXMLFile(getClass().getName());
         }
     }
@@ -144,13 +140,6 @@ public class XMLStaffDayDao implements Dao<StaffDays> {
 
     @Override
     public void save(StaffDays staffDay) {
-        if (!(staffDayList == null)) {
-            for (StaffDays staffDayTemp : staffDayList) {
-                if (staffDay.getStaffId().equals(staffDayTemp.getStaffId())) {
-                    return;
-                }
-            }
-        }
         staffDayList.add(staffDay);
         writeXMLDB();
     }

@@ -1,6 +1,6 @@
 package com.markevich.factorybox.gui.controllers;
 
-import biznesObgectFactory.User;
+import businessObjectFactoryBox.User;
 import com.markevich.factorybox.gui.AppWindows;
 import com.markevich.factorybox.gui.DBWindow;
 import com.markevich.factorybox.gui.WindowConfigs;

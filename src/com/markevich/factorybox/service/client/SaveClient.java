@@ -1,6 +1,6 @@
 package com.markevich.factorybox.service.client;
 
-import biznesObgectFactory.Client;
+import businessObjectFactoryBox.Client;
 import com.markevich.factorybox.dao.xmldb.XmlDaoFactory;
 
 public class SaveClient {

@@ -1,7 +1,7 @@
 package com.markevich.factorybox.net.serverCommandFactory.staffday;
 
-import biznesObgectFactory.Day;
-import biznesObgectFactory.StaffDays;
+import businessObjectFactoryBox.Day;
+import businessObjectFactoryBox.StaffDays;
 import com.markevich.factorybox.dao.xmldb.exception.ExceptionFindStaffDayId;
 import com.markevich.factorybox.net.ResponseCode;
 import com.markevich.factorybox.net.interfaces.Command;
@@ -19,13 +19,12 @@ public class GetStaffDayIdCommand implements Command {
         StaffDays staffDay = ServiceFactory.StaffDayService().loadById(request.getParameter("staff-id"));
         try {
             Map<String, String> map = new HashMap<>();
-            String days = "";
+            StringBuilder days = new StringBuilder();
             map.put("staff-id", staffDay.getStaffId().toString());
             for (Day day : staffDay.getListDay()) {
-                days = days + day.getDay().toString() + "/" + day.getOrderName() + "/"
-                        + day.getProductivity().toString() + "/" + day.getStaffId().toString() + "/" + "#";
+                days.append(day.getDay().toString()).append("/").append(day.getOrderName()).append("/").append(day.getProductivity().toString()).append("/").append(day.getStaffId().toString()).append("/").append("#");
             }
-            map.put("days", days);
+            map.put("days", days.toString());
             response.addResponseData(map);
             response.setResponseCode(ResponseCode.OkCode);
         } catch (NullPointerException nullPointerException) {

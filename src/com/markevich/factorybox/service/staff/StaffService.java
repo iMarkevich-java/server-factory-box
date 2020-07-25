@@ -1,6 +1,6 @@
 package com.markevich.factorybox.service.staff;
 
-import biznesObgectFactory.Staff;
+import businessObjectFactoryBox.Staff;
 import com.markevich.factorybox.service.interfaces.Service;
 
 import java.util.List;

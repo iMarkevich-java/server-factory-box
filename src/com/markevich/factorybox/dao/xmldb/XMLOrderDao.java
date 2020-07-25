@@ -1,6 +1,6 @@
 package com.markevich.factorybox.dao.xmldb;
 
-import biznesObgectFactory.Order;
+import businessObjectFactoryBox.Order;
 import com.markevich.factorybox.dao.daointerface.Dao;
 import com.markevich.factorybox.dao.xmldb.exception.ExceptionFindOrderId;
 import com.markevich.factorybox.dao.xmldb.exception.ExceptionReadXMLFile;
@@ -131,11 +131,7 @@ public class XMLOrderDao implements Dao<Order> {
             StreamResult file = new StreamResult(new File("data/orderList.xml"));
             transformer.transform(source, file);
 
-        } catch (ParserConfigurationException e) {
-            throw new ExceptionWriteXMLFile(getClass().getName());
-        } catch (TransformerConfigurationException e) {
-            throw new ExceptionWriteXMLFile(getClass().getName());
-        } catch (TransformerException e) {
+        } catch (ParserConfigurationException | TransformerException e) {
             throw new ExceptionWriteXMLFile(getClass().getName());
         }
     }

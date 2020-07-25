@@ -1,6 +1,6 @@
 package com.markevich.factorybox.dao.xmldb;
 
-import biznesObgectFactory.Material;
+import businessObjectFactoryBox.Material;
 import com.markevich.factorybox.dao.daointerface.Dao;
 import com.markevich.factorybox.dao.xmldb.exception.ExceptionFindProductId;
 import com.markevich.factorybox.dao.xmldb.exception.ExceptionReadXMLFile;
@@ -115,11 +115,7 @@ public class XMLMaterialDao implements Dao<Material> {
             StreamResult file = new StreamResult(new File("data/materialList.xml"));
             transformer.transform(source, file);
 
-        } catch (ParserConfigurationException e) {
-            throw new ExceptionWriteXMLFile(getClass().getName());
-        } catch (TransformerConfigurationException e) {
-            throw new ExceptionWriteXMLFile(getClass().getName());
-        } catch (TransformerException e) {
+        } catch (Exception e) {
             throw new ExceptionWriteXMLFile(getClass().getName());
         }
     }

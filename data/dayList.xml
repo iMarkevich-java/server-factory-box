@@ -38,5 +38,11 @@
             <productivity>56</productivity>
             <staff-id-day>2</staff-id-day>
         </list-day>
+        <list-day>
+            <day>2020-07-14</day>
+            <order-name>Jon</order-name>
+            <productivity>45</productivity>
+            <staff-id-day>2</staff-id-day>
+        </list-day>
     </staff-day>
 </list>

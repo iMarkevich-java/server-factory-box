@@ -1,6 +1,6 @@
 package com.markevich.factorybox.service.supplier;
 
-import biznesObgectFactory.Supplier;
+import businessObjectFactoryBox.Supplier;
 import com.markevich.factorybox.service.interfaces.Service;
 
 import java.util.List;

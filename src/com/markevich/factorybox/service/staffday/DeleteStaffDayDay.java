@@ -1,6 +1,6 @@
 package com.markevich.factorybox.service.staffday;
 
-import biznesObgectFactory.Day;
+import businessObjectFactoryBox.Day;
 import com.markevich.factorybox.dao.xmldb.XmlDaoFactory;
 
 public class DeleteStaffDayDay {

@@ -1,7 +1,7 @@
 package com.markevich.factorybox.service.staffday;
 
-import biznesObgectFactory.Day;
-import biznesObgectFactory.StaffDays;
+import businessObjectFactoryBox.Day;
+import businessObjectFactoryBox.StaffDays;
 import com.markevich.factorybox.service.interfaces.Service;
 
 import java.util.List;

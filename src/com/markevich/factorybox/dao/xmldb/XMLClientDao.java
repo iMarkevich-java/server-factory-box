@@ -1,6 +1,6 @@
 package com.markevich.factorybox.dao.xmldb;
 
-import biznesObgectFactory.Client;
+import businessObjectFactoryBox.Client;
 import com.markevich.factorybox.dao.daointerface.Dao;
 import com.markevich.factorybox.dao.xmldb.exception.ExceptionFindClientId;
 import com.markevich.factorybox.dao.xmldb.exception.ExceptionReadXMLFile;
@@ -102,11 +102,7 @@ public class XMLClientDao implements Dao<Client> {
             StreamResult file = new StreamResult(new File("data/clientList.xml"));
             transformer.transform(source, file);
 
-        } catch (ParserConfigurationException e) {
-            throw new ExceptionWriteXMLFile(getClass().getName());
-        } catch (TransformerConfigurationException e) {
-            throw new ExceptionWriteXMLFile(getClass().getName());
-        } catch (TransformerException e) {
+        } catch (ParserConfigurationException | TransformerException e) {
             throw new ExceptionWriteXMLFile(getClass().getName());
         }
     }

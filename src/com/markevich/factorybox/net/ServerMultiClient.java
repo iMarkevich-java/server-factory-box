@@ -1,6 +1,6 @@
 package com.markevich.factorybox.net;
 
-import biznesObgectFactory.Client;
+import businessObjectFactoryBox.Client;
 import com.markevich.factorybox.net.exeptions.*;
 import com.markevich.factorybox.net.interfaces.Command;
 import com.markevich.factorybox.net.interfaces.Request;
@@ -76,7 +76,9 @@ public class ServerMultiClient extends Thread {
                         jsonWriter.endObject();
                         flushOutputStream();
                     }
-                    command.execute(request, response);
+                    if (!(command == null)) {
+                        command.execute(request, response);
+                    }
                     jsonWriter.object();
                     buildHeadersSection(jsonWriter, response);
                     buildResponseDataSection(jsonWriter, response);
@@ -84,12 +86,9 @@ public class ServerMultiClient extends Thread {
                     flushOutputStream();
                 }
                 closeStream(outputStream, inputStream, socket);
-            } catch (ExceptionCreateInputStream input) {
+            } catch (ExceptionCreateInputStream | ExceptionCreateOutputStream input) {
                 new ExceptionCreateStream(getClass().getName());
-            } catch (ExceptionCreateOutputStream output) {
-
             }
-
         }
     }
 

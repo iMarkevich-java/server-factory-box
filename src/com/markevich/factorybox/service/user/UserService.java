@@ -1,6 +1,6 @@
 package com.markevich.factorybox.service.user;
 
-import biznesObgectFactory.User;
+import businessObjectFactoryBox.User;
 
 import java.util.List;
 
