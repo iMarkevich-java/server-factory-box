@@ -25,21 +25,10 @@ public class ServerClient extends Thread {
                 serverSocket = new ServerSocket(port.intValue());
                 Socket client = serverSocket.accept();
                 System.out.println("connect");
-                for (int i = 0; i < socketList.size(); i++) {
-                    Socket socket = socketList.get(i);
-                    if (socket.isClosed()) {
-                        socketList.remove(i);
-                    }
-                }
-                int countClient = 5;
-                if (socketList.size() < countClient) {
-                    addSocket(client);
-                    ServerMultiClient serverMultiClient = new ServerMultiClient(client);
-                    serverMultiClient.setDaemon(true);
-                    serverMultiClient.start();
-                } else {
-                    client.close();
-                }
+                addSocket(client);
+                ServerMultiClient serverMultiClient = new ServerMultiClient(client);
+                serverMultiClient.setDaemon(true);
+                serverMultiClient.start();
                 serverSocket.close();
             }
         } catch (IOException | ExceptionCreateServerSocket e) {
