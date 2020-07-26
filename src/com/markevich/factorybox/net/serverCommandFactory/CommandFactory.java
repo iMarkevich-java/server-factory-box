@@ -25,10 +25,10 @@ public class CommandFactory {
 
     public CommandFactory() {
 
-        commands.put("delete-day", new GetDeleteDayCommand());
+        commands.put("get-delete-staff-day", new GetDeleteDayCommand());
         commands.put("get-staff-day-by-id", new GetStaffDayIdCommand());
         commands.put("get-all-staff-day", new GetAllStaffDayCommand());
-        commands.put("delete-staff-day", new GetDeleteStaffDayCommand());
+        commands.put("get-delete-staff-days", new GetDeleteStaffDayCommand());
         commands.put("update-staff-day", new GetUpdateStaffDayCommand());
         commands.put("save-staff-day", new GetSaveStaffDayCommand());
         commands.put("verification-connect", new GetVerificationConnectCommand());
@@ -69,7 +69,6 @@ public class CommandFactory {
     }
 
     public Command getCommand(String commandName) {
-        Command command = commands.get(commandName);
-        return command;
+        return commands.get(commandName);
     }
 }

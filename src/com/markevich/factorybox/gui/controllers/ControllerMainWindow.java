@@ -21,12 +21,16 @@ import java.util.List;
 public class ControllerMainWindow implements DBWindow {
 
     @FXML
+    private Button deleteUserButton;
+    @FXML
     private TextField port;
     @FXML
     private Button run;
     @FXML
     private TextArea text;
     private ServerClient serverClient;
+    @FXML
+    private TableView<UserDb> userDB;
 
     public void run() {
         if (port.getText().equals("")) {
@@ -54,6 +58,13 @@ public class ControllerMainWindow implements DBWindow {
                 serverClient.closeSocket();
                 serverClient.closeServer();
             }
+        }
+    }
+
+    public void checkUser() {
+        UserDb userDb = userDB.getSelectionModel().getSelectedItem();
+        if(!(userDb == null)) {
+            deleteUserButton.setDisable(false);
         }
     }
 
@@ -89,11 +100,9 @@ public class ControllerMainWindow implements DBWindow {
 
     }
 
-    @FXML
-    private TableView<UserDb> userDB;
-
     @Override
     public void reloadWindow() {
+        deleteUserButton.setDisable(true);
         ObservableList<UserDb> observableList = userDB.getItems();
         List<UserDb> userList = ServiceFactory.UserService().loadAll();
         observableList.clear();

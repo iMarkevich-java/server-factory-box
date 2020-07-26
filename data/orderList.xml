@@ -1,23 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<list>
-    <order>
-        <id>1</id>
-        <size-order>234</size-order>
-        <status>START</status>
-        <stage>12</stage>
-        <client-id>1</client-id>
-        <order-name>Huawei (1).</order-name>
-        <start-date>2020-07-28</start-date>
-        <order-term>23</order-term>
-    </order>
-    <order>
-        <id>2</id>
-        <size-order>56</size-order>
-        <status>START</status>
-        <stage>0</stage>
-        <client-id>1</client-id>
-        <order-name>Huawei (2).</order-name>
-        <start-date>2020-07-07</start-date>
-        <order-term>56</order-term>
-    </order>
-</list>
+<list/>

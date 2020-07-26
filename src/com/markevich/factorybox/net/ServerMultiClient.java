@@ -19,14 +19,9 @@ import java.util.Map;
 import java.util.Set;
 
 public class ServerMultiClient extends Thread {
+    private final Socket socket;
     private InputStream inputStream;
     private OutputStreamWriter outputStream;
-    private JSONTokener jsonReader;
-    private JSONWriter jsonWriter;
-    private List<Client> clientList;
-    private final Socket socket;
-    private Request request;
-    private Response response;
 
     public ServerMultiClient(Socket socket) {
         this.socket = socket;
@@ -62,10 +57,10 @@ public class ServerMultiClient extends Thread {
                 if (socket.isBound()) {
                     inputStream = inputStreamBuilder(socket);
                     JSONTokener jsonReader = new JSONTokener(inputStream);
-                    request = new SocketJsonRequest(jsonReader);
+                    Request request = new SocketJsonRequest(jsonReader);
                     outputStream = outputStreamBuilder(socket);
                     JSONWriter jsonWriter = new JSONWriter(outputStream);
-                    response = new SocketJsonResponse(jsonWriter);
+                    Response response = new SocketJsonResponse(jsonWriter);
                     CommandFactory commandFactory = CommandFactory.get();
                     Command command = commandFactory.getCommand(request.getCommandName());
                     if (command == null) {
@@ -78,12 +73,12 @@ public class ServerMultiClient extends Thread {
                     }
                     if (!(command == null)) {
                         command.execute(request, response);
+                        jsonWriter.object();
+                        buildHeadersSection(jsonWriter, response);
+                        buildResponseDataSection(jsonWriter, response);
+                        jsonWriter.endObject();
+                        flushOutputStream();
                     }
-                    jsonWriter.object();
-                    buildHeadersSection(jsonWriter, response);
-                    buildResponseDataSection(jsonWriter, response);
-                    jsonWriter.endObject();
-                    flushOutputStream();
                 }
                 closeStream(outputStream, inputStream, socket);
             } catch (ExceptionCreateInputStream | ExceptionCreateOutputStream input) {

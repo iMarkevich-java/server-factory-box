@@ -9,12 +9,9 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class ServerClient extends Thread {
-    private final Integer countClient = 5;
-    private BigInteger port = null;
     private final ArrayList<Socket> socketList = new ArrayList<>();
-    private Socket client = null;
+    private BigInteger port = null;
     private ServerSocket serverSocket = null;
-    private final StopServer stopServer = new StopServer();
     private Boolean stop = true;
 
     public ServerClient() {
@@ -26,7 +23,7 @@ public class ServerClient extends Thread {
         try {
             while (stop) {
                 serverSocket = new ServerSocket(port.intValue());
-                client = serverSocket.accept();
+                Socket client = serverSocket.accept();
                 System.out.println("connect");
                 for (int i = 0; i < socketList.size(); i++) {
                     Socket socket = socketList.get(i);
@@ -34,6 +31,7 @@ public class ServerClient extends Thread {
                         socketList.remove(i);
                     }
                 }
+                int countClient = 5;
                 if (socketList.size() < countClient) {
                     addSocket(client);
                     ServerMultiClient serverMultiClient = new ServerMultiClient(client);
@@ -44,9 +42,7 @@ public class ServerClient extends Thread {
                 }
                 serverSocket.close();
             }
-        } catch (IOException e) {
-            throw new ExceptionCreateServerSocket(getClass().getName());
-        } catch (ExceptionCreateServerSocket e) {
+        } catch (IOException | ExceptionCreateServerSocket e) {
             throw new ExceptionCreateServerSocket(getClass().getName());
         } finally {
             try {
@@ -58,15 +54,14 @@ public class ServerClient extends Thread {
 
     }
 
-    public ArrayList<Socket> addSocket(Socket socket) {
+    public void addSocket(Socket socket) {
         this.socketList.add(socket);
-        return this.socketList;
     }
 
     public void closeSocket() {
-        for (int i = 0; i < socketList.size(); i++) {
+        for (Socket socket : socketList) {
             try {
-                socketList.get(i).close();
+                socket.close();
             } catch (IOException e) {
                 System.out.println("error socket close");
             }
@@ -92,18 +87,10 @@ public class ServerClient extends Thread {
         return true;
     }
 
-    public String getPort() {
-        return port.toString();
-    }
-
     public void setPort(String port) {
         if (isNumber(port)) {
+            this.port = new BigInteger(port);
         }
-        this.port = new BigInteger(port);
-    }
-
-    public Boolean getStop() {
-        return stop;
     }
 
     public void setStop(Boolean stop) {

@@ -1,13 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<list>
-    <material>
-        <id>1</id>
-        <supplier-id>1</supplier-id>
-        <material-name>Metal</material-name>
-        <price>34</price>
-        <amount>34</amount>
-        <unit>34</unit>
-        <size>Metal</size>
-        <path-image>file:/C:/Users/Игорь/Pictures/image/Untitled.jpg</path-image>
-    </material>
-</list>
+<list/>

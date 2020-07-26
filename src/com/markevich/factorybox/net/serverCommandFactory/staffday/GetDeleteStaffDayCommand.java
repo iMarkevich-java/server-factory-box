@@ -13,5 +13,6 @@ public class GetDeleteStaffDayCommand implements Command {
         String staffId = request.getParameter("staff-id");
         ServiceFactory.StaffDayService().delete(staffId);
         response.setResponseCode(ResponseCode.OkCode);
+
     }
 }

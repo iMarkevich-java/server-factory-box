@@ -4,7 +4,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.*?>
-<GridPane xmlns:fx="http://javafx.com/fxml/1" cacheShape="false" centerShape="false" maxHeight="-Infinity" maxWidth="-Infinity"
+<GridPane xmlns:fx="http://javafx.com/fxml/1" cacheShape="false" centerShape="false" maxHeight="-Infinity"
+          maxWidth="-Infinity"
           minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" scaleShape="false"
           snapToPixel="false" xmlns="http://javafx.com/javafx/11.0.1"
           fx:controller="com.markevich.factorybox.gui.controllers.ControllerMainWindow">
@@ -19,55 +20,51 @@
         <RowConstraints maxHeight="108.80000000000001" minHeight="0.0" prefHeight="108.80000000000001"
                         vgrow="SOMETIMES"/>
     </rowConstraints>
-    <children>
-        <Label cacheShape="false" centerShape="false" focusTraversable="false" scaleShape="false" text="PORT"
-               textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" GridPane.halignment="CENTER"
-               GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS"/>
-        <TextField fx:id="port" cacheShape="false" centerShape="false" focusTraversable="false" maxHeight="-Infinity"
-                   maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="100.0"
-                   scaleShape="false" text="4009" GridPane.columnIndex="1" GridPane.halignment="LEFT"
-                   GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-            <GridPane.margin>
-                <Insets left="10.0"/>
-            </GridPane.margin>
-        </TextField>
-        <Button fx:id="run" cacheShape="false" centerShape="false" focusTraversable="false" mnemonicParsing="false"
-                onAction="#run" scaleShape="false" text="RUN" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS"
-                GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS"/>
-        <Pane pickOnBounds="false" prefHeight="200.0" prefWidth="400.0" GridPane.columnIndex="1"
-              GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER"
-              GridPane.vgrow="ALWAYS">
-            <children>
-                <TableView fx:id="userDB" cacheShape="false" centerShape="false" focusTraversable="false"
-                           maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                           prefHeight="220.0" prefWidth="400" scaleShape="false" snapToPixel="false">
-                    <columns>
-                        <TableColumn maxWidth="200.0" minWidth="200.0" prefWidth="200" resizable="false" text="Name">
-                            <cellValueFactory>
-                                <PropertyValueFactory property="name"/>
-                            </cellValueFactory>
-                        </TableColumn>
-                    </columns>
-                </TableView>
-                <Button fx:id="addUserButton" layoutX="439.0" layoutY="14.0" mnemonicParsing="false" onAction="#addUser"
-                        prefHeight="25.0" prefWidth="49.0" text="add"/>
-                <Button fx:id="deleteUserButton" layoutX="439.0" layoutY="58.0" mnemonicParsing="false"
-                        onAction="#deleteUser" text="delete"/>
-            </children>
-        </Pane>
-        <TextArea fx:id="text" maxHeight="50.0" maxWidth="392.0" minHeight="6.0" minWidth="150.0" prefHeight="50.0"
-                  prefWidth="392.0" text="Server Factory" GridPane.columnIndex="1" GridPane.halignment="LEFT"
-                  GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-            <GridPane.margin>
-                <Insets left="10.0"/>
-            </GridPane.margin>
-        </TextArea>
-        <Button fx:id="exit" mnemonicParsing="false" onAction="#exit" text="EXIT" GridPane.columnIndex="1"
-                GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER"
-                GridPane.vgrow="ALWAYS">
-            <GridPane.margin>
-                <Insets right="50.0"/>
-            </GridPane.margin>
-        </Button>
-    </children>
+    <Label cacheShape="false" centerShape="false" scaleShape="false" text="PORT"
+           textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" GridPane.halignment="CENTER"
+           GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS"/>
+    <TextField fx:id="port" cacheShape="false" centerShape="false" focusTraversable="false" maxHeight="-Infinity"
+               maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="100.0"
+               scaleShape="false" text="4009" GridPane.columnIndex="1" GridPane.halignment="LEFT"
+               GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+        <GridPane.margin>
+            <Insets left="10.0"/>
+        </GridPane.margin>
+    </TextField>
+    <Button fx:id="run" cacheShape="false" centerShape="false" focusTraversable="false" mnemonicParsing="false"
+            onAction="#run" scaleShape="false" text="RUN" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS"
+            GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS"/>
+    <Pane pickOnBounds="false" prefHeight="200.0" prefWidth="400.0" GridPane.columnIndex="1"
+          GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER"
+          GridPane.vgrow="ALWAYS">
+        <TableView fx:id="userDB" onMouseClicked="#checkUser" cacheShape="false" centerShape="false" focusTraversable="false"
+                   maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                   prefHeight="220.0" prefWidth="400" scaleShape="false" snapToPixel="false">
+            <columns>
+                <TableColumn maxWidth="200.0" minWidth="200.0" prefWidth="200" resizable="false" text="Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <Button layoutX="439.0" layoutY="14.0" mnemonicParsing="false" onAction="#addUser"
+                prefHeight="25.0" prefWidth="49.0" text="add"/>
+        <Button fx:id="deleteUserButton" disable="true" layoutX="439.0" layoutY="58.0" mnemonicParsing="false"
+                onAction="#deleteUser" text="delete"/>
+    </Pane>
+    <TextArea fx:id="text" maxHeight="50.0" maxWidth="392.0" minHeight="6.0" minWidth="150.0" prefHeight="50.0"
+              prefWidth="392.0" text="Server Factory" GridPane.columnIndex="1" GridPane.halignment="LEFT"
+              GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+        <GridPane.margin>
+            <Insets left="10.0"/>
+        </GridPane.margin>
+    </TextArea>
+    <Button fx:id="exit" mnemonicParsing="false" onAction="#exit" text="EXIT" GridPane.columnIndex="1"
+            GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER"
+            GridPane.vgrow="ALWAYS">
+        <GridPane.margin>
+            <Insets right="50.0"/>
+        </GridPane.margin>
+    </Button>
 </GridPane>

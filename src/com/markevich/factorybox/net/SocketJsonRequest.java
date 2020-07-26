@@ -11,9 +11,8 @@ import java.util.Set;
 
 public class SocketJsonRequest implements Request {
 
-    private String commandName;
-
     private final Map<String, String> parameters = new HashMap<>();
+    private String commandName;
 
     public SocketJsonRequest(JSONTokener jsonReader) {
         try {

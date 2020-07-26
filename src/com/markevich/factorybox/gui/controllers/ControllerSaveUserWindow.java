@@ -10,12 +10,19 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-import java.math.BigInteger;
 import java.util.List;
 
 public class ControllerSaveUserWindow implements DBWindow {
 
 
+    @FXML
+    private TextField nameTextField;
+    @FXML
+    private TextField passwordTextField;
+    @FXML
+    private Label nameLabel;
+    @FXML
+    private Label passwordLabel;
 
     private void showServerWindow() {
         AppWindows.getInstance().showWindow(WindowConfigs.ServerWindow);
@@ -23,20 +30,15 @@ public class ControllerSaveUserWindow implements DBWindow {
     }
 
     @FXML
-    private TextField nameTextField;
-    @FXML
-    private TextField passwordTextField;
-
-    @FXML
     private void save() {
         User user = new User();
-        if(checkValueText()) {
+        if (checkValueText()) {
             List<UserDb> userLis = ServiceFactory.UserService().loadAll();
             for (UserDb userDb : userLis) {
                 if (userDb.getName().equals(nameTextField.getText())) {
                     nameLabel.setText("User with this name exists!!!");
                     return;
-                }else {
+                } else {
                     nameLabel.setText("");
                 }
             }
@@ -46,11 +48,6 @@ public class ControllerSaveUserWindow implements DBWindow {
             showServerWindow();
         }
     }
-
-    @FXML
-    private Label nameLabel;
-    @FXML
-    private Label passwordLabel;
 
     private Boolean checkValueText() {
         boolean bool = true;

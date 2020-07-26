@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-          prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+          prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1"
           fx:controller="com.markevich.factorybox.gui.controllers.ControllerSaveUserWindow">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" percentWidth="0.0" prefWidth="150.0"/>
@@ -47,13 +42,13 @@
     </Button>
     <Label fx:id="nameLabel" prefHeight="18.0" prefWidth="212.0" textFill="RED" GridPane.columnIndex="2">
         <GridPane.margin>
-          <Insets left="5.0"/>
+            <Insets left="5.0"/>
         </GridPane.margin>
     </Label>
     <Label fx:id="passwordLabel" prefHeight="18.0" prefWidth="222.0" textFill="RED" GridPane.columnIndex="2"
            GridPane.rowIndex="1">
         <GridPane.margin>
-          <Insets left="5.0"/>
+            <Insets left="5.0"/>
         </GridPane.margin>
     </Label>
 </GridPane>

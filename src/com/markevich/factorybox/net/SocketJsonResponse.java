@@ -9,13 +9,10 @@ import java.util.Map;
 
 public class SocketJsonResponse implements Response {
 
-    private int statusCode;
-
-    private String statusMessage;
-
     private final List<Map<String, String>> responseData = new ArrayList<>();
-
     private final JSONWriter writer;
+    private int statusCode;
+    private String statusMessage;
 
     public SocketJsonResponse(JSONWriter writer) {
         this.writer = writer;
