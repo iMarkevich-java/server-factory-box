@@ -36,8 +36,6 @@ public class XMLStaffDayDao implements Dao<StaffDays> {
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(new File("data/dayList.xml"));
             doc.getDocumentElement().normalize();
-
-            NodeList listNodeList = doc.getElementsByTagName("list");
             NodeList staffNodeList = doc.getElementsByTagName("staff-day");
             for (int k = 0; k < staffNodeList.getLength(); k++) {
                 List<Day> listDay = new LinkedList<>();

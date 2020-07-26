@@ -7,15 +7,15 @@ import com.markevich.factorybox.gui.WindowConfigs;
 import com.markevich.factorybox.service.ServiceFactory;
 import com.markevich.factorybox.service.user.UserDb;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.math.BigInteger;
 import java.util.List;
 
 public class ControllerSaveUserWindow implements DBWindow {
-    @FXML
-    private TextField nameTextField;
-    @FXML
-    private TextField passwordTextField;
+
+
 
     private void showServerWindow() {
         AppWindows.getInstance().showWindow(WindowConfigs.ServerWindow);
@@ -23,20 +23,51 @@ public class ControllerSaveUserWindow implements DBWindow {
     }
 
     @FXML
+    private TextField nameTextField;
+    @FXML
+    private TextField passwordTextField;
+
+    @FXML
     private void save() {
         User user = new User();
-        user.setName(nameTextField.getText());
-        user.setPassword(passwordTextField.getText());
-        List<UserDb> userLis = ServiceFactory.UserService().loadAll();
-        if (!(user.getName().isEmpty() || user.getPassword().isEmpty())) {
+        if(checkValueText()) {
+            List<UserDb> userLis = ServiceFactory.UserService().loadAll();
             for (UserDb userDb : userLis) {
-                if (userDb.getName().equals(user.getName())) {
+                if (userDb.getName().equals(nameTextField.getText())) {
+                    nameLabel.setText("User with this name exists!!!");
                     return;
+                }else {
+                    nameLabel.setText("");
                 }
             }
+            user.setName(nameTextField.getText());
+            user.setPassword(passwordTextField.getText());
             ServiceFactory.UserService().save(user);
             showServerWindow();
         }
+    }
+
+    @FXML
+    private Label nameLabel;
+    @FXML
+    private Label passwordLabel;
+
+    private Boolean checkValueText() {
+        boolean bool = true;
+
+        if (nameTextField.getText().isEmpty()) {
+            nameLabel.setText("Please enter text");
+            bool = false;
+        } else {
+            nameLabel.setText("");
+        }
+        if (passwordTextField.getText().isEmpty()) {
+            passwordLabel.setText("Please enter text");
+            bool = false;
+        } else {
+            passwordLabel.setText("");
+        }
+        return bool;
     }
 
     public void back() {
@@ -52,5 +83,7 @@ public class ControllerSaveUserWindow implements DBWindow {
     public void reloadWindow() {
         nameTextField.setText("");
         passwordTextField.setText("");
+        nameLabel.setText("");
+        passwordLabel.setText("");
     }
 }

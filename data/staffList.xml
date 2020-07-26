@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <list>
-    <staff-list/>
+    <staff-list>
+        <staff>
+            <id>1</id>
+            <first-name>Malkovich</first-name>
+            <last-name>Jon</last-name>
+            <date-of-birth>1984-07-25</date-of-birth>
+            <salary>1000</salary>
+            <position>worker</position>
+            <address>Minsk </address>
+            <department>technical</department>
+            <path-photo>file:/C:/Users/Игорь/IdeaProjects/client-factory-box/resources/image/fa.png</path-photo>
+        </staff>
+    </staff-list>
 </list>

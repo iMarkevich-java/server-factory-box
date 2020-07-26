@@ -19,42 +19,14 @@ import java.math.BigInteger;
 import java.util.List;
 
 public class ControllerMainWindow implements DBWindow {
-    @FXML
-    private Button addUserButton;
-    @FXML
-    private Button deleteUserButton;
-    @FXML
-    private TableView<UserDb> userDB;
+
     @FXML
     private TextField port;
     @FXML
     private Button run;
     @FXML
     private TextArea text;
-    private ObservableList<UserDb> observableList;
     private ServerClient serverClient;
-
-    public void deleteUser() {
-        UserDb userDb = userDB.getSelectionModel().getSelectedItem();
-        if (!(userDb == null)) {
-            ServiceFactory.UserService().delete(userDb.getName());
-            reloadWindow();
-        }
-    }
-
-    public void addUser() {
-        AppWindows.getInstance().showWindow(WindowConfigs.SaveUserWindow);
-        AppWindows.getInstance().reloadWindow(WindowConfigs.SaveUserWindow);
-    }
-
-    private Boolean isNumber(String strNumber) {
-        try {
-            new BigInteger(strNumber);
-        } catch (NumberFormatException | NullPointerException nfe) {
-            return false;
-        }
-        return true;
-    }
 
     public void run() {
         if (port.getText().equals("")) {
@@ -85,6 +57,29 @@ public class ControllerMainWindow implements DBWindow {
         }
     }
 
+    public void deleteUser() {
+        UserDb userDb = userDB.getSelectionModel().getSelectedItem();
+        if (!(userDb == null)) {
+            ServiceFactory.UserService().delete(userDb.getName());
+            reloadWindow();
+        }
+    }
+
+    public void addUser() {
+        AppWindows.getInstance().showWindow(WindowConfigs.SaveUserWindow);
+        AppWindows.getInstance().reloadWindow(WindowConfigs.SaveUserWindow);
+
+    }
+
+    private Boolean isNumber(String strNumber) {
+        try {
+            new BigInteger(strNumber);
+        } catch (NumberFormatException | NullPointerException nfe) {
+            return false;
+        }
+        return true;
+    }
+
     public void exit() {
         Platform.exit();
     }
@@ -94,9 +89,12 @@ public class ControllerMainWindow implements DBWindow {
 
     }
 
+    @FXML
+    private TableView<UserDb> userDB;
+
     @Override
     public void reloadWindow() {
-        ObservableList observableList = userDB.getItems();
+        ObservableList<UserDb> observableList = userDB.getItems();
         List<UserDb> userList = ServiceFactory.UserService().loadAll();
         observableList.clear();
         observableList.addAll(userList);

@@ -1,2 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<list/>
+<list>
+    <product>
+        <id>1</id>
+        <material>metal</material>
+        <color>0xe6994dff</color>
+        <texture>file:/C:/Users/Игорь/Pictures/image/box.jpg</texture>
+        <image>file:/C:/Users/Игорь/Pictures/image/apple.png</image>
+        <size-box>middle</size-box>
+        <order-id>1</order-id>
+    </product>
+    <product>
+        <id>2</id>
+        <material>metal</material>
+        <color>0x80334dff</color>
+        <texture>file:/C:/Users/Игорь/Pictures/image/box.jpg</texture>
+        <image>file:/C:/Users/Игорь/Pictures/image/apple.png</image>
+        <size-box>middle</size-box>
+        <order-id>2</order-id>
+    </product>
+</list>

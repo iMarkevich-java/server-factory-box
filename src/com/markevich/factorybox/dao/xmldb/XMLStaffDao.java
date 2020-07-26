@@ -32,40 +32,12 @@ public class XMLStaffDao implements Dao<Staff> {
 
     private static List<Staff> initXMLDb() {
         ArrayList<Staff> list = new ArrayList<>();
-        Staff director = new Staff(Position.Director);
 
         try {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(new File("data/staffList.xml"));
             doc.getDocumentElement().normalize();
-
-//            NodeList directorList = doc.getElementsByTagName("director");
-//            Node directorNode = directorList.item(0);
-//
-//            if (directorNode.getNodeType() == Node.ELEMENT_NODE) {
-//                Element staffElement = (Element) directorNode;
-//                Integer id = Integer.parseInt(staffElement.getElementsByTagName("id").item(0).getTextContent());
-//                String firstName = staffElement.getElementsByTagName("first-name").item(0).getTextContent();
-//                String lastName = staffElement.getElementsByTagName("last-name").item(0).getTextContent();
-//                String dateOfBirth = staffElement.getElementsByTagName("date-of-birth").item(0).getTextContent();
-//                String address = staffElement.getElementsByTagName("address").item(0).getTextContent();
-//                String position = staffElement.getElementsByTagName("position").item(0).getTextContent();
-//                String department = staffElement.getElementsByTagName("department").item(0).getTextContent();
-//                Double salary = Double.parseDouble(staffElement.getElementsByTagName("salary").item(0).getTextContent());
-//                director.setFirstName(firstName);
-//                director.setLastName(lastName);
-//                director.setDateOfBirth(dateOfBirth);
-//                director.setSalary(salary);
-//                director.setId(id);
-//                director.setAddress(address);
-//                director.setDepartment("Office");
-//                if(position.equals("director")) {
-//                    director.setPosition(Position.Director);
-//                }
-//
-//                list.add(director);
-//            }
 
             NodeList staffList = doc.getElementsByTagName("staff");
             for (int i = 0; i < staffList.getLength(); i++) {
@@ -111,40 +83,9 @@ public class XMLStaffDao implements Dao<Staff> {
             Document document = builder.newDocument();
             Element list = document.createElement("list");
             document.appendChild(list);
-//            Element listDirector = document.createElement("director-list");
-//            list.appendChild(listDirector);
             Element listPersonal = document.createElement("staff-list");
             list.appendChild(listPersonal);
             for (Staff staff : listStaff) {
-//                if (staff.getPosition().equals("director")) {
-//                    Element directorList = document.createElement("director");
-//                    listDirector.appendChild(directorList);
-//                    Element id = document.createElement("id");
-//                    directorList.appendChild(id);
-//                    id.appendChild(document.createTextNode(String.valueOf(staff.getId())));
-//                    Element firstName = document.createElement("first-name");
-//                    directorList.appendChild(firstName);
-//                    firstName.appendChild(document.createTextNode(staff.getFirstName()));
-//                    Element lastName = document.createElement("last-name");
-//                    directorList.appendChild(lastName);
-//                    lastName.appendChild(document.createTextNode(staff.getLastName()));
-//                    Element dateOfBirth = document.createElement("date-of-birth");
-//                    directorList.appendChild(dateOfBirth);
-//                    dateOfBirth.appendChild(document.createTextNode(staff.getDateOfBirth()));
-//                    Element salary = document.createElement("salary");
-//                    directorList.appendChild(salary);
-//                    salary.appendChild(document.createTextNode(String.valueOf(staff.getSalary())));
-//                    Element position = document.createElement("position");
-//                    directorList.appendChild(position);
-//                    position.appendChild(document.createTextNode(staff.getPosition()));
-//                    Element address = document.createElement("address");
-//                    directorList.appendChild(address);
-//                    address.appendChild(document.createTextNode(staff.getAddress()));
-//                    Element department = document.createElement("department");
-//                    directorList.appendChild(department);
-//                    department.appendChild(document.createTextNode("Office"));
-//                    continue;
-//                }
                 Element personal = document.createElement("staff");
                 listPersonal.appendChild(personal);
                 Element idPersonal = document.createElement("id");
@@ -175,14 +116,12 @@ public class XMLStaffDao implements Dao<Staff> {
                 personal.appendChild(pathPhoto);
                 pathPhoto.appendChild(document.createTextNode(staff.getPathPhoto()));
             }
-
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             DOMSource source = new DOMSource(document);
             StreamResult file = new StreamResult(new File("data/staffList.xml"));
             transformer.transform(source, file);
-
         } catch (ParserConfigurationException | TransformerException e) {
             throw new ExceptionWriteXMLFile(getClass().getName());
         }

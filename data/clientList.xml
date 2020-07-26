@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<list/>
+<list>
+    <client>
+        <id>1</id>
+        <company-name>Huawei</company-name>
+        <address>China</address>
+        <legal-data>UNP34567890</legal-data>
+        <manager>Chan</manager>
+    </client>
+</list>
