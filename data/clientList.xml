@@ -1,17 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<list>
-    <client>
-        <id>2</id>
-        <company-name>Horizont</company-name>
-        <address>Minsk</address>
-        <legal-data>UNP123456</legal-data>
-        <manager>Ivan</manager>
-    </client>
-    <client>
-        <id>4</id>
-        <company-name>Jon</company-name>
-        <address>USA</address>
-        <legal-data>Homeles</legal-data>
-        <manager>Malkovich</manager>
-    </client>
-</list>
+<list/>

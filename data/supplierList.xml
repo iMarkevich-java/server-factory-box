@@ -1,17 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<list>
-    <supplier>
-        <id>2</id>
-        <company-name>Белмона</company-name>
-        <address>Минск Логойский Тракт</address>
-        <legal-data>УНП56789234567</legal-data>
-        <manager>Будницкий В.И.</manager>
-    </supplier>
-    <supplier>
-        <id>3</id>
-        <company-name>Унибелус</company-name>
-        <address>Минск</address>
-        <legal-data>УНП56789</legal-data>
-        <manager>Ковтун</manager>
-    </supplier>
-</list>
+<list/>
