@@ -1,2 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<list/>
+<list>
+    <order>
+        <id>1</id>
+        <size-order>25</size-order>
+        <status>STOP</status>
+        <stage>2865</stage>
+        <client-id>1</client-id>
+        <order-name>sgdj (1).</order-name>
+        <start-date>2020-07-07</start-date>
+        <order-term>23</order-term>
+    </order>
+</list>

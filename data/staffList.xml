@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <list>
-    <staff-list/>
+    <staff-list>
+        <staff>
+            <id>1</id>
+            <first-name>fjfjyf</first-name>
+            <last-name>dhdt</last-name>
+            <date-of-birth>2020-07-16</date-of-birth>
+            <salary>567</salary>
+            <position>worker</position>
+            <address>dhftfjyfkut</address>
+            <department>technical</department>
+            <path-photo>file:/C:/Users/Игорь/IdeaProjects/client-factory-box/resources/image/fa.png</path-photo>
+        </staff>
+    </staff-list>
 </list>

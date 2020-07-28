@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<list/>
+<list>
+    <staff-day>
+        <staff-id>1</staff-id>
+        <list-day>
+            <day>2020-07-15</day>
+            <order-name>sgdj (1).</order-name>
+            <productivity>456</productivity>
+            <staff-id-day>1</staff-id-day>
+        </list-day>
+        <list-day>
+            <day>2020-07-10</day>
+            <order-name>sgdj (1).</order-name>
+            <productivity>67</productivity>
+            <staff-id-day>1</staff-id-day>
+        </list-day>
+    </staff-day>
+</list>

@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<list/>
+<list>
+    <product>
+        <id>1</id>
+        <material>plastic</material>
+        <color>0xe6804dff</color>
+        <texture>file:/C:/Users/Игорь/IdeaProjects/client-factory-box/resources/image/box.png</texture>
+        <image>file:/C:/Users/Игорь/IdeaProjects/client-factory-box/resources/image/triangle.jpg</image>
+        <size-box>middle</size-box>
+        <order-id>1</order-id>
+    </product>
+</list>

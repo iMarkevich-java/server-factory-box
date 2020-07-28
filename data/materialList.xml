@@ -1,2 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<list/>
+<list>
+    <material>
+        <id>1</id>
+        <supplier-id>1</supplier-id>
+        <material-name>Cardboard</material-name>
+        <price>4567</price>
+        <amount>456</amount>
+        <unit>funt</unit>
+        <size>Cardboard</size>
+        <path-image>file:/C:/Users/Игорь/IdeaProjects/client-factory-box/resources/image/apple.png</path-image>
+    </material>
+</list>

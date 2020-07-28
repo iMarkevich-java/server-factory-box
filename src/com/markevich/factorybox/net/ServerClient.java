@@ -25,7 +25,7 @@ public class ServerClient extends Thread {
                 serverSocket = new ServerSocket(port.intValue());
                 Socket client = serverSocket.accept();
                 System.out.println("connect");
-                addSocket(client);
+                socketList.add(client);
                 ServerMultiClient serverMultiClient = new ServerMultiClient(client);
                 serverMultiClient.setDaemon(true);
                 serverMultiClient.start();
@@ -41,10 +41,6 @@ public class ServerClient extends Thread {
             }
         }
 
-    }
-
-    public void addSocket(Socket socket) {
-        this.socketList.add(socket);
     }
 
     public void closeSocket() {
