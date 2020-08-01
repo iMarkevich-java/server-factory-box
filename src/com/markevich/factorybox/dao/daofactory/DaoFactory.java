@@ -1,24 +1,24 @@
 package com.markevich.factorybox.dao.daofactory;
 
+import com.markevich.factorybox.dao.xmldb.*;
 import com.markevich.factorybox.dao.daointerface.Dao;
-import com.markevich.factorybox.dao.xmldb.XMLUserDao;
 
 public abstract class DaoFactory {
 
     public abstract XMLUserDao getUserDao();
 
-    public abstract Dao getStaffDayDao();
+    public abstract XMLStaffDayDao getStaffDayDao();
 
-    public abstract Dao getClientDao();
+    public abstract XMLClientDao getClientDao();
 
-    public abstract Dao getMaterialDao();
+    public abstract XMLMaterialDao getMaterialDao();
 
-    public abstract Dao getStaffDao();
+    public abstract XMLStaffDao getStaffDao();
 
-    public abstract Dao getOrderDao();
+    public abstract XMLOrderDao getOrderDao();
 
-    public abstract Dao getProductDao();
+    public abstract XMLProductDao getProductDao();
 
-    public abstract Dao getSupplierDao();
+    public abstract XMLSupplierDao getSupplierDao();
 }
 

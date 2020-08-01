@@ -1,11 +1,11 @@
 package com.markevich.factorybox.gui.controllers;
 
 import businessObjectFactoryBox.User;
-import com.markevich.factorybox.gui.AppWindows;
 import com.markevich.factorybox.gui.DBWindow;
-import com.markevich.factorybox.gui.WindowConfigs;
 import com.markevich.factorybox.service.ServiceFactory;
 import com.markevich.factorybox.service.user.UserDb;
+import com.markevich.factorybox.gui.AppWindows;
+import com.markevich.factorybox.gui.WindowConfigs;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;

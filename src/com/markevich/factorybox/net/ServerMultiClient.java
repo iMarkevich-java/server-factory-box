@@ -1,7 +1,7 @@
 package com.markevich.factorybox.net;
 
-import businessObjectFactoryBox.Client;
-import com.markevich.factorybox.net.exeptions.*;
+import com.markevich.factorybox.gui.exceptions.*;
+import com.markevich.factorybox.net.exeptions.ExceptionCreateStream;
 import com.markevich.factorybox.net.interfaces.Command;
 import com.markevich.factorybox.net.interfaces.Request;
 import com.markevich.factorybox.net.interfaces.Response;
@@ -93,14 +93,14 @@ public class ServerMultiClient extends Thread {
                 outputStreamWriter.close();
             }
         } catch (IOException e) {
-            throw new ExceptionCloseInputStream();
+            throw new ExceptionCloseInputStream(getClass().getName());
         }
         try {
             if (!(inputStream == null)) {
                 inputStream.close();
             }
         } catch (IOException e) {
-            throw new ExceptionCloseOutputStream();
+            throw new ExceptionCloseOutputStream(getClass().getName());
         }
         try {
             if (!(socket == null)) {
@@ -125,7 +125,7 @@ public class ServerMultiClient extends Thread {
         try {
             outputStream = new OutputStreamWriter(socket.getOutputStream());
         } catch (IOException e) {
-            throw new ExceptionCreateOutputStream();
+            throw new ExceptionCreateOutputStream(getClass().getName());
         }
         return outputStream;
     }

@@ -1,13 +1,13 @@
 package com.markevich.factorybox.gui;
 
 import com.markevich.factorybox.gui.exceptions.CanNotCreateWindowException;
+import com.markevich.factorybox.gui.exceptions.ExceptionFindIcon;
 import com.markevich.factorybox.gui.exceptions.UnknownWindowException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import resources.exceptions.ExceptionFindIcon;
 
 import java.io.IOException;
 import java.net.MalformedURLException;

@@ -13,7 +13,7 @@ public class Main extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
         AppWindows.getInstance().addMainStage(primaryStage);
         AppWindows.getInstance().showWindow(WindowConfigs.ServerWindow);
         AppWindows.getInstance().reloadWindow(WindowConfigs.ServerWindow);

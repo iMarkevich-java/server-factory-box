@@ -7,9 +7,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="jar_files_json" level="project" />
+    <orderEntry type="library" name="BiznesObgectFactory" level="project" />
+    <orderEntry type="library" name="json-20200518" level="project" />
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="lib1" level="project" />
-    <orderEntry type="library" name="BiznesObgectFactory" level="project" />
+    <orderEntry type="library" name="jar_files_json" level="project" />
   </component>
 </module>
