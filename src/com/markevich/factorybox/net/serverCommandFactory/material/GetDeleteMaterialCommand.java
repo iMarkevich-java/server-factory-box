@@ -9,7 +9,7 @@ import com.markevich.factorybox.service.ServiceFactory;
 public class GetDeleteMaterialCommand implements Command {
     @Override
     public void execute(Request request, Response response) {
-        String id = request.getParameter("material-id");
+        String id = request.getParameter("id");
         ServiceFactory.MaterialService().delete(id);
         response.setResponseCode(ResponseCode.OkCode);
     }

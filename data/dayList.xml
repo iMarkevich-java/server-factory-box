@@ -3,15 +3,21 @@
     <staff-day>
         <staff-id>1</staff-id>
         <list-day>
-            <day>2020-07-15</day>
-            <order-name>sgdj (1).</order-name>
-            <productivity>456</productivity>
+            <day>2020-08-12</day>
+            <order-name>okijhgiuytr (1).</order-name>
+            <productivity>45</productivity>
             <staff-id-day>1</staff-id-day>
         </list-day>
         <list-day>
-            <day>2020-07-10</day>
-            <order-name>sgdj (1).</order-name>
-            <productivity>67</productivity>
+            <day>2020-08-07</day>
+            <order-name>okijhgiuytr (2).</order-name>
+            <productivity>654</productivity>
+            <staff-id-day>1</staff-id-day>
+        </list-day>
+        <list-day>
+            <day>2020-08-14</day>
+            <order-name>okijhgiuytr (1).</order-name>
+            <productivity>54</productivity>
             <staff-id-day>1</staff-id-day>
         </list-day>
     </staff-day>

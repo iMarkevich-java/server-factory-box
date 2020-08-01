@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <list>
     <order>
-        <id>1</id>
-        <size-order>25</size-order>
-        <status>STOP</status>
-        <stage>2865</stage>
+        <id>3</id>
+        <size-order>654</size-order>
+        <status>START</status>
+        <stage>765</stage>
         <client-id>1</client-id>
-        <order-name>sgdj</order-name>
-        <start-date>2020-07-07</start-date>
-        <order-term>23</order-term>
+        <order-name>123ooooooo (3).</order-name>
+        <start-date>2020-07-29</start-date>
+        <order-term>654</order-term>
+    </order>
+    <order>
+        <id>2</id>
+        <size-order>654</size-order>
+        <status>START</status>
+        <stage>719</stage>
+        <client-id>5</client-id>
+        <order-name>okijhgiuytr (2).</order-name>
+        <start-date>2020-08-06</start-date>
+        <order-term>65</order-term>
+    </order>
+    <order>
+        <id>1</id>
+        <size-order>7654</size-order>
+        <status>STOP</status>
+        <stage>864</stage>
+        <client-id>5</client-id>
+        <order-name>okijhgiuytr (1).</order-name>
+        <start-date>2020-08-04</start-date>
+        <order-term>76</order-term>
     </order>
 </list>

@@ -9,7 +9,7 @@ import com.markevich.factorybox.service.ServiceFactory;
 public class GetDeleteSupplierCommand implements Command {
     @Override
     public void execute(Request request, Response response) {
-        String id = request.getParameter("supplier-id");
+        String id = request.getParameter("id");
         ServiceFactory.SupplierService().delete(id);
         response.setResponseCode(ResponseCode.OkCode);
     }

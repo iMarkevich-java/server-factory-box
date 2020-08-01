@@ -4,10 +4,10 @@
         <id>1</id>
         <supplier-id>1</supplier-id>
         <material-name>Cardboard</material-name>
-        <price>4567</price>
-        <amount>456</amount>
-        <unit>funt</unit>
+        <price>8765</price>
+        <amount>8765</amount>
+        <unit>8765</unit>
         <size>Cardboard</size>
-        <path-image>file:/C:/Users/Игорь/IdeaProjects/client-factory-box/resources/image/apple.png</path-image>
+        <path-image>file:/C:/Users/Игорь/Pictures/image/box.jpg</path-image>
     </material>
 </list>

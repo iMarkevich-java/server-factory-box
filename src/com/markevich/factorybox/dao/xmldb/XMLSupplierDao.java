@@ -156,9 +156,9 @@ public class XMLSupplierDao implements Dao<Supplier> {
 
     @Override
     public void delete(String id) {
-        for (Supplier supplier : listSupplier) {
-            if (supplier.getId().equals(id)) {
-                listSupplier.remove(supplier);
+        for (Supplier supplierTemp : listSupplier) {
+            if (supplierTemp.getId().equals(id)) {
+                listSupplier.remove(supplierTemp);
                 writeXMLDB();
                 break;
             }

@@ -10,7 +10,7 @@ public class GetDeleteClientCommand implements Command {
 
     @Override
     public void execute(Request request, Response response) {
-        String id = request.getParameter("client-id");
+        String id = request.getParameter("id");
         ServiceFactory.ClientService().delete(id);
         response.setResponseCode(ResponseCode.OkCode);
     }

@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <list>
     <client>
+        <id>4</id>
+        <company-name>oo2345oooo</company-name>
+        <address>oooo33oooo</address>
+        <legal-data>kkkkkkkkk</legal-data>
+        <manager>ooooo3456oooo</manager>
+    </client>
+    <client>
         <id>1</id>
-        <company-name>sgdj</company-name>
-        <address>dhdh</address>
-        <legal-data>dhjhfdj</legal-data>
-        <manager>dhd</manager>
+        <company-name>123ooooooo</company-name>
+        <address>oooooooo</address>
+        <legal-data>kkkkkkkkk</legal-data>
+        <manager>123oooooo</manager>
+    </client>
+    <client>
+        <id>5</id>
+        <company-name>okijhgiuytr</company-name>
+        <address>kjhgfiujhytr</address>
+        <legal-data>kjhgfkjuhyt</legal-data>
+        <manager>kjhgfijuytr</manager>
     </client>
 </list>

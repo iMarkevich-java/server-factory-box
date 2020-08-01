@@ -12,9 +12,9 @@ public class GetUpdateClientCommand implements Command {
     @Override
     public void execute(Request request, Response response) {
 
-        String companyName = request.getParameter("companyName");
+        String companyName = request.getParameter("company-name");
         String address = request.getParameter("address");
-        String legalData = request.getParameter("legalData");
+        String legalData = request.getParameter("legal-data");
         String manager = request.getParameter("manager");
         String id = request.getParameter("id");
 

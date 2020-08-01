@@ -2,11 +2,20 @@
 <list>
     <product>
         <id>1</id>
-        <material>plastic</material>
-        <color>0xe6804dff</color>
-        <texture>file:/C:/Users/Игорь/IdeaProjects/client-factory-box/resources/image/box.png</texture>
-        <image>file:/C:/Users/Игорь/IdeaProjects/client-factory-box/resources/image/triangle.jpg</image>
+        <material>cardboard</material>
+        <color>0xff9966ff</color>
+        <texture>file:/C:/Users/Игорь/Pictures/oboi_prirody180715/svoya_priroda_20.jpg</texture>
+        <image>file:/C:/Users/Игорь/Pictures/oboi_prirody180715/svoya_priroda05.jpg</image>
         <size-box>middle</size-box>
         <order-id>1</order-id>
+    </product>
+    <product>
+        <id>2</id>
+        <material>metal</material>
+        <color>0x1a0068ff</color>
+        <texture>file:/C:/Users/Игорь/Pictures/oboi_prirody180715/svoya_priroda_20.jpg</texture>
+        <image>file:/C:/Users/Игорь/Pictures/oboi_prirody180715/svoya_priroda_20.jpg</image>
+        <size-box>minimum</size-box>
+        <order-id>2</order-id>
     </product>
 </list>
